@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('GitCodeCheckOut') {
             steps {
-                git branch: 'main', url: 'https://github.com/mannem302/AnilKumar.git'
+                git branch: 'main', url: 'https://github.com/Rupanjalisahu7/AnilKumar.git'
             }
         }
         stage('Build') {
