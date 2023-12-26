@@ -18,7 +18,7 @@ pipeline {
         }
         stage('ImageBuild') {
             steps {
-                sh 'docker build -t mannem302/tomcat:$BUILD_ID .'
+                sh 'docker build -t rupanjalisahu/tomcat:$BUILD_ID .'
             }
         }
         stage('Dockerhublogin') {
@@ -30,13 +30,13 @@ pipeline {
         }
         stage('Dockerhubpush') {
             steps {
-                sh 'docker push mannem302/tomcat:$BUILD_ID'
+                sh 'docker push rupanjalisahu/tomcat:$BUILD_ID'
             }
         }
         stage('RunContainer') {
             steps {
                 
-                sh 'docker run -itd --name mywebapp$BUILD_ID  -p 8082:8080 mannem302/tomcat:$BUILD_ID'
+                sh 'docker run -itd --name mywebapp$BUILD_ID  -p 8084:8080 mannem302/tomcat:$BUILD_ID'
             }
         }
         
